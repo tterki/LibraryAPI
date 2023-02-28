@@ -33,7 +33,7 @@ namespace LibraryAPI
                     author = bookDTO.author
                 };
 
-                // Vérifier s'il le livre du même auteur existe déjà
+                // Vérifier si un livre avec le même nom et du même auteur existe déjà
                 foreach (Book b in db.Books)
                 {
                     if (b.name == bookDTO.name && b.author == bookDTO.author) return TypedResults.NoContent();

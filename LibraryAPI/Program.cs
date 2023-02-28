@@ -8,14 +8,12 @@ builder.Services.AddDbContext<LibraryDb>(opt => opt.UseInMemoryDatabase("books")
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var app = builder.Build();
 var books = app.MapGroup("/books");
-
 BookService bookService = new BookService();
 books.MapGet("/", bookService.GetAllBooks);
 books.MapGet("/{id}", bookService.GetBookById);
 books.MapPost("/", bookService.CreateBook);
 books.MapPut("/{id}", bookService.UpdateBook);
 books.MapDelete("/{id}", bookService.DeleteBook);
-
 app.Run();
 
 //static async Task<IResult> GetAllBooks(LibraryDb db)
