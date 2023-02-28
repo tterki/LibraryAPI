@@ -8,6 +8,6 @@ namespace LibraryAPI
         public LibraryDb(DbContextOptions<LibraryDb> options)
        : base(options) { }
 
-        public DbSet<Book> Books => Set<Book>();
+        public DbSet<Book> Books => Set<Book>();        
     }
 }
